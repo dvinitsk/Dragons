@@ -24,5 +24,7 @@ class Dragon(Unit):
         y_2 = y + self.__fire_range
 
         for unit in units:
-           if unit.in_area(x_1, x_2, y_1, y_2):
-               in_range.append(unit)
+            if unit.in_area(x_1, y_1, x_2, y_2):
+                in_range.append(unit)
+
+        return in_range
