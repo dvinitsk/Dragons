@@ -16,8 +16,13 @@ class Dragon(Unit):
         self.__fire_range = fire_range
 
     def breathe_fire(self, x, y, units):
-        # hit_by_blast = []
-        # for unit in units:
-        #     = x + self.__fire_range
-        pass    
-                        
+        in_range = [] #list that captures all units with range
+
+        x_1 = x - self.__fire_range
+        x_2 = x + self.__fire_range
+        y_1 = y - self.__fire_range
+        y_2 = y + self.__fire_range
+
+        for unit in units:
+           if unit.in_area(x_1, x_2, y_1, y_2):
+               in_range.append(unit)
